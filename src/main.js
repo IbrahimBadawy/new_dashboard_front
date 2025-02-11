@@ -37,6 +37,8 @@ app.use(router) // tell the app to use the router
 app.use(ConfirmationService);
 app.use(ToastService);
 app.use(DialogService);
+
+
 app.component('Toast', Toast);
 app.component('Tree', Tree);
 
