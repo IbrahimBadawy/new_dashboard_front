@@ -16,8 +16,7 @@ import SpeedDial1 from './components/SpeedDial1.vue';
 
 import Noir from './presets/Noir.js';
 
-import Toast from 'primevue/toast';
-import Tree from 'primevue/tree';
+
 
 
 const app = createApp(App);
@@ -37,10 +36,6 @@ app.use(router) // tell the app to use the router
 app.use(ConfirmationService);
 app.use(ToastService);
 app.use(DialogService);
-
-
-app.component('Toast', Toast);
-app.component('Tree', Tree);
 
 app.component('ThemeSwitcher', ThemeSwitcher);
 app.component('SpeedDial1', SpeedDial1);

@@ -1,5 +1,5 @@
 <template>
-    <div class="card">
+    <div class="card ">
         <Panel header="Header" toggleable :pt="{
             header: (options) => ({
                 id: 'myPanelHeader',

@@ -1,7 +1,7 @@
 <template>
     <div class="card">
         <!-- Locally registered components -->
-        <Toast />
+        <Toast  style="z-index: -100;" />
         <Tree v-model:selectionKeys="selectedKey" :value="nodes" selectionMode="single" :metaKeySelection="false"
             @nodeSelect="onNodeSelect" @nodeUnselect="onNodeUnselect" @nodeExpand="onNodeExpand"
             @nodeCollapse="onNodeCollapse" class="w-full md:w-[30rem]" />
@@ -11,7 +11,7 @@
 <script setup>
 import { ref, onMounted } from 'vue';
 import { useToast } from 'primevue/usetoast';
-import { NodeService } from '/src/service/NodeService';
+import { NodeService } from '..NodeService';
 
 // Make sure these are imported for local registration
 import Tree from 'primevue/tree';

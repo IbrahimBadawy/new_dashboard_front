@@ -1,14 +1,12 @@
 <template>
-    <div class="">
+
         <div>
             <SpeedDial :model="items" direction="up"
                 style="position: fixed; left: calc(10% - 2rem); bottom: 1.5%;z-index: 10000;" />
-            <!-- <SpeedDial :model="items" direction="down" style="position: absolute; left: calc(50% - 2rem); top: 0" /> -->
-            <!-- <SpeedDial :model="items" direction="left" style="position: absolute; top: calc(50% - 2rem); right: 0" /> -->
-            <!-- <SpeedDial :model="items" direction="right" style="position: absolute; top: calc(50% - 2rem); left: 0" /> -->
-            <Toast style="position: fixed; height: 500px ;left: calc(5% - 2rem); bottom: 0" />
+           
+            <Toast style="z-index: -100;" />
         </div>
-    </div>
+
 </template>
 
 <script setup>

@@ -1,13 +1,21 @@
+
+<template>
+    <div class="card">
+        <Toast  style="z-index: -100;" />
+        <Tree v-model:selectionKeys="selectedKey" :value="nodes" selectionMode="single" :metaKeySelection="false"
+            @nodeSelect="onNodeSelect" @nodeUnselect="onNodeUnselect" @nodeExpand="onNodeExpand" @nodeCollapse="onNodeCollapse" class="w-full md:w-[30rem]"></Tree>
+    </div>
+</template>
+
 <script setup>
 import { ref, onMounted } from 'vue';
-import { useToast } from 'primevue/usetoast';
-import { NodeService } from '/src/service/NodeService';
-
-// Make sure these are imported for local registration
-import Tree from 'primevue/tree';
+import { NodeService } from '@/service/NodeService';
+import { useToast } from "primevue/usetoast";
 import Toast from 'primevue/toast';
+import Tree from 'primevue/tree';
 
-const nodes = ref([]);
+
+const nodes = ref(null);
 const selectedKey = ref(null);
 const toast = useToast();
 
@@ -27,21 +35,7 @@ const onNodeExpand = (node) => {
     toast.add({ severity: 'info', summary: 'Node Expanded', detail: node.label, life: 3000 });
 };
 
-const onNodeCollapse = (node) => {
+const onNodeCollapse =(node) => {
     toast.add({ severity: 'info', summary: 'Node Collapsed', detail: node.label, life: 3000 });
 };
 </script>
-
-<template>
-    <Toast />
-    <Tree
-      :value="nodes"
-      selectionMode="single"
-      :metaKeySelection="false"
-      v-model:selectionKeys="selectedKey"
-      @nodeSelect="onNodeSelect"
-      @nodeUnselect="onNodeUnselect"
-      @nodeExpand="onNodeExpand"
-      @nodeCollapse="onNodeCollapse"
-    />
-</template>

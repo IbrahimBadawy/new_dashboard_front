@@ -1,5 +1,5 @@
 <template>
-    <div class="" style="position:fixed; bottom: calc(5% - 2rem); right: 5%;z-index: 10000;">
+    <div class="" style="position:fixed;bottom: 0; right: 30px;z-index: 10000;height: 50px;">
         <ul class="flex list-none m-0 p-0 gap-2 items-center">
             <li>
                 <button type="button"
